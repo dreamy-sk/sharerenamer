@@ -9,26 +9,26 @@ use OCA\ShareRenamer\Service\ShareRenamerService;
 
 class ShareRenamerController extends Controller {
 
-    private $service;
-    private $userId;
+  private $service;
+  private $userId;
 
-    use Errors;
+  use Errors;
 
-    public function __construct($AppName, IRequest $request,
-                                ShareRenamerService $service, $UserId){
-        parent::__construct($AppName, $request);
-        $this->service = $service;
-        $this->userId = $UserId;
-    }
+  public function __construct($AppName, IRequest $request,
+                              ShareRenamerService $service, $UserId){
+    parent::__construct($AppName, $request);
+    $this->service = $service;
+    $this->userId = $UserId;
+  }
 
-    /**
-     * @NoAdminRequired
-     *
-     * @param string $title
-     * @param string $content
-     */
-    public function rename() {
-        return $this->service->rename($_POST['old_token'], $_POST['new_token']);
-    }
+  /**
+   * @NoAdminRequired
+   *
+   * @param string $title
+   * @param string $content
+   */
+  public function rename() {
+    return $this->service->rename($_POST['old_token'], $_POST['new_token']);
+  }
 
 }

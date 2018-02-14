@@ -11,9 +11,9 @@ $appName = $c->query('AppName');
 // Hack which only loads the scripts in the Files app
 $request = $c->query('Request');
 if (isset($request->server['REQUEST_URI'])) {
-	$url = $request->server['REQUEST_URI'];
-	if (preg_match('%apps/files(/.*)?%', $url)) {
-		// add script only when in Files app
-		Util::addScript($appName, 'sharerenamer');
-	}
+  $url = $request->server['REQUEST_URI'];
+  if (preg_match('%apps/files(/.*)?%', $url)) {
+    // add script only when in Files app
+    Util::addScript($appName, 'sharerenamer');
+  }
 }
