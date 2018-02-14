@@ -12,23 +12,23 @@ use OCA\ShareRenamer\Db\ShareRenamerMapper;
 
 class ShareRenamerService {
 
-	private $mapper;
+  private $mapper;
 
-	public function __construct(ShareRenamerMapper $mapper){
-		$this->mapper = $mapper;
-	}
+  public function __construct(ShareRenamerMapper $mapper){
+    $this->mapper = $mapper;
+  }
 
-	private function handleException ($e) {
-		if ($e instanceof DoesNotExistException ||
-			$e instanceof MultipleObjectsReturnedException) {
-			throw new NotFoundException($e->getMessage());
-		} else {
-			throw $e;
-		}
-	}
+  private function handleException ($e) {
+    if ($e instanceof DoesNotExistException ||
+      $e instanceof MultipleObjectsReturnedException) {
+      throw new NotFoundException($e->getMessage());
+    } else {
+      throw $e;
+    }
+  }
 
-	public function rename($oldtoken, $newtoken) {
-		return $this->mapper->trytokeninsert($oldtoken, $newtoken);
-	}
+  public function rename($oldtoken, $newtoken) {
+    return $this->mapper->trytokeninsert($oldtoken, $newtoken);
+  }
 
 }
