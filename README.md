@@ -1,3 +1,5 @@
+:warning: **Deprecated, use [DecaTec/sharerenamer](https://github.com/DecaTec/sharerenamer)** :warning:
+
 # Files Share Link Renamer
 ### A simple and fast share link renamer add-in for Files app in ownCloud >=9 and NextCloud >=9
 
